@@ -155,32 +155,4 @@
     }
   }
 
-  .experiencia-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: auto;
-    padding: 2rem 1rem;
-  }
-  
-  .experiencia-item {
-    flex: 1 1 300px;
-    text-align: center;
-  }
-  
-  .experiencia-item img {
-    width: 80%;
-    max-width: 200px;
-    border-radius: 50%;
-    border: 3px solid #555;
-    margin-bottom: 1rem;
-  }
-  
-  .experiencia-item h3 {
-    font-size: 1rem;
-    color: #fffffe;
-  }
   
