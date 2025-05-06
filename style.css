@@ -6,16 +6,16 @@
   }
   
   body {
-    background-color: #0f0e17; /* Background */
-    color: #a7a9be;            /* Paragraph */
+    background-color: #0f1115;
+    color: #fffffe;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
   }
   
   /* Header fixo */
   header {
-    background: #0f0e17;         /* Mesmo fundo do body pra manter unidade */
-    color: #ff8906;              /* Highlight */
+    background: #1a1c22;
+    color: #ff8906;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,14 +38,14 @@
   }
   
   .menu a {
-    color: #fffffe; /* Headline */
+    color: #e0e0e0;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
   }
   
   .menu a:hover {
-    color: #ff8906; /* Highlight */
+    color: #e53170;
   }
   
   /* Seções */
@@ -58,12 +58,12 @@
   section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #ff8906; /* Highlight */
+    color: #ff8906;
   }
   
   section p {
     font-size: 1.1rem;
-    color: #a7a9be; /* Paragraph */
+    opacity: 0.9;
   }
   
   /* Projetos */
@@ -75,7 +75,7 @@
   }
   
   .projeto {
-    background: #1c1f26; /* Levemente diferente do fundo principal */
+    background: #1c1f26;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -87,14 +87,14 @@
   }
   
   .projeto h3 {
-    color: #fffffe; /* Headline */
+    color: #ffffff;
     margin-bottom: 0.5rem;
   }
   
   .projeto a {
     display: inline-block;
     margin-top: 1rem;
-    color: #ff8906; /* Highlight */
+    color: #ff8906;
     text-decoration: none;
     font-weight: bold;
   }
@@ -113,13 +113,13 @@
     border: none;
     border-radius: 5px;
     background-color: #2b2e35;
-    color: #fffffe;
+    color: #fff;
   }
   
   button {
     padding: 0.8rem;
-    background: #ff8906; /* Botão */
-    color: #fffffe;       /* Texto do botão */
+    background: #ff8906;
+    color: #000;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -128,16 +128,16 @@
   }
   
   button:hover {
-    background: #f25f4c; /* Secondary */
+    background: #ff8906;
   }
   
   /* Footer */
   footer {
-    background: #0f0e17;
+    background: #1a1c22;
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
-    color: #a7a9be;
+    color: #888;
     margin-top: 4rem;
   }
   
@@ -154,4 +154,5 @@
       margin-top: 1rem;
     }
   }
+
   
