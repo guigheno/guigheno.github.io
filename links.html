@@ -5,11 +5,24 @@
   <title>Meus Links | Guilherme Gheno</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
       background: #0f1115;
       color: #fff;
       font-family: sans-serif;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
       text-align: center;
+    }
+
+    main {
+      flex: 1;
       padding: 3rem 1rem;
     }
 
@@ -37,19 +50,42 @@
       color: #000;
       transform: scale(1.03);
     }
+
+    footer {
+      padding: 2rem 0;
+      background-color: #1a1a1a;
+    }
+
+    footer img {
+      display: block;
+      margin: 0 auto 1rem;
+      width: 100px;
+      opacity: 0.8;
+    }
+
+    footer p {
+      color: #777;
+      font-size: 0.9rem;
+    }
   </style>
+  <link rel="icon" href="assets/icon/Senna.png" type="image/png">
 </head>
 <body>
 
-  <h1>Guilherme Gheno</h1>
+  <main>
+    <h1>Guilherme Gheno</h1>
 
-  
-  <a href="https://guigheno.github.io" target="_blank" class="link-btn">Portfólio</a>
-  <a href="https://www.linkedin.com/in/guilhermegheno" target="_blank" class="link-btn">LinkedIn</a>
-  <a href="https://www.instagram.com/guigheno/" target="_blank" class="link-btn">Instagram</a>
-  <a href="https://www.linkedin.com/in/guilhermegheno" target="_blank" class="link-btn">LinkedIn</a>
-  <a href="/assets/curriculo.pdf" target="_blank" class="link-btn">Currículo PDF</a>
-  <a href="https://sigapark.com" target="_blank" class="link-btn">Site Sigapark</a>
+    <a href="https://guigheno.github.io" target="_blank" class="link-btn">Portfólio</a>
+    <a href="https://www.linkedin.com/in/guilhermegheno" target="_blank" class="link-btn">LinkedIn</a>
+    <a href="https://www.instagram.com/guigheno/" target="_blank" class="link-btn">Instagram</a>
+    <a href="/assets/curriculo.pdf" target="_blank" class="link-btn">Currículo</a>
+    <a href="https://sigapark.com" target="_blank" class="link-btn">Site Sigapark</a>
+  </main>
+
+  <footer>
+    <img src="assets/img/mclaren.png" alt="Logo Mclaren" style="width: 200px;"/>
+    <p>© 2025 Guilherme Gheno. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
