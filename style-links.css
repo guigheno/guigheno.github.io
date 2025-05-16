@@ -90,6 +90,6 @@ footer p {
 
 @media (max-width: 768px) {
   footer img#mclaren {
-    bottom: 100px;
+    bottom: 50px;
   }
 }
