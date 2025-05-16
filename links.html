@@ -12,6 +12,10 @@
       color: #fff;
       font-family: sans-serif;
       height: 100%;
+      background-image: url('assets/img/black-paper.png');
+      background-repeat: repeat;
+      background-size: auto;
+      background-attachment: fixed;
     }
 
     body {
@@ -51,7 +55,12 @@
       color: #fff;
       transform: scale(1.03);
     }
-
+    
+    .animar {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
     footer {
       display: flex;
       flex-direction: column;
@@ -86,22 +95,26 @@
       }
     }
 
-
+    #nome {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    
   </style>
   <link rel="icon" href="assets/icon/Senna.png" type="image/png">
 </head>
 <body>
 
   <main>
-    <img src="assets/img/guigheno.JPEG" alt="Guilherme Gheno"
+    <img id="foto" src="assets/img/guigheno.JPEG" alt="Guilherme Gheno" class="animar"
            style="width: 12rem; border-radius: 50%; border: 3px solid #ac2424;">
-    <h1>Guilherme Gheno</h1>
+    <h1 id="nome">Guilherme Gheno</h1>
 
-    <a href="https://guigheno.github.io" target="_blank" class="link-btn">Portfólio</a>
-    <a href="https://www.linkedin.com/in/guilhermegheno" target="_blank" class="link-btn">LinkedIn</a>
-    <a href="https://www.instagram.com/guigheno/" target="_blank" class="link-btn">Instagram</a>
-    <!-- <a href="/assets/curriculo.pdf" target="_blank" class="link-btn">Currículo</a> -->
-    <a href="https://sigapark.com" target="_blank" class="link-btn">Site Sigapark</a>
+    <a href="https://guigheno.github.io" target="_blank" class="link-btn animar">Portfólio</a>
+    <a href="https://www.linkedin.com/in/guilhermegheno" target="_blank" class="link-btn animar">LinkedIn</a>
+    <a href="https://www.instagram.com/guigheno/" target="_blank" class="link-btn animar">Instagram</a>
+    <!-- <a href="/assets/curriculo.pdf" target="_blank" class="link-btn animar">Currículo</a> -->
+    <a href="https://sigapark.com" target="_blank" class="link-btn animar">Site Sigapark</a>
   </main>
 
   <footer>
@@ -120,6 +133,43 @@
       repeatDelay: 2,
       yoyo: false // volta pro início
     });
+
+    gsap.to("#nome", {
+      opacity: 1,
+      scale: 1,
+      duration: 1.2,
+      ease: "elastic.out(1, 0.5)"
+    });
+
+    gsap.to(".animar", {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.2, // anima um por um com atraso
+      delay: 0.5    // espera a animação do nome terminar
+    });
+
+    const foto = document.getElementById("foto");
+
+    foto.addEventListener("mouseenter", () => {
+      gsap.to(foto, {
+        scale: 1.07,
+        rotation: 0,
+        boxShadow: "0px 0px 30px #000",
+        duration: 0.3
+      });
+    });
+
+    foto.addEventListener("mouseleave", () => {
+      gsap.to(foto, {
+        scale: 1,
+        rotation: 0,
+        boxShadow: "0px 0px 0px transparent",
+        duration: 0.3
+      });
+    });
+    
   </script>
 
 </body>
