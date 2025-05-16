@@ -4,110 +4,12 @@
   <meta charset="UTF-8">
   <title>Meus Links | Guilherme Gheno</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #1a1a1a;
-      color: #fff;
-      font-family: sans-serif;
-      height: 100%;
-      background-image: url('assets/img/black-paper.png');
-      background-repeat: repeat;
-      background-size: auto;
-      background-attachment: fixed;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
-      overflow-x: hidden;
-    }
-
-    main {
-      flex: 1;
-      padding: 3rem 1rem;
-    }
-
-    h1 {
-      color: #fff;
-      margin-bottom: 2rem;
-    }
-
-    .link-btn {
-      display: block;
-      margin: 1rem auto;
-      padding: 1rem 2rem;
-      background-color: #5c5c5c;
-      color: #ffffff;
-      border: 2px solid #ac2424;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      max-width: 300px;
-      transition: background 0.3s, transform 0.2s;
-    }
-
-    .link-btn:hover {
-      background-color: #0f0f0f;
-      color: #fff;
-      transform: scale(1.03);
-    }
-    
-    .animar {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    
-    footer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      color: #aaa;
-      gap: 0.5rem;
-      background-color: #1a1a1a; /* seu fundo */
-    }
-
-    footer img {
-      display: block;
-      margin: 0 auto 1rem;
-      width: 100px;
-      opacity: 0.8;
-    }
-
-    footer p {
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    #mclaren {
-      position: static;
-      bottom: 50px;
-      left: -220px;
-    }
-
-    @media (max-width: 768px) {
-      #mclaren {
-          bottom: 10px;
-      }
-    }
-
-    #nome {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    
-  </style>
+  <link rel="stylesheet" href="style-links.css">
   <link rel="icon" href="assets/icon/Senna.png" type="image/png">
 </head>
 <body>
-
   <main>
-    <img id="foto" src="assets/img/guigheno.JPEG" alt="Guilherme Gheno" class="animar"
-           style="width: 12rem; border-radius: 50%; border: 3px solid #ac2424;">
+    <img id="foto" src="assets/img/guigheno.JPEG" alt="Guilherme Gheno" class="animar">
     <h1 id="nome">Guilherme Gheno</h1>
 
     <a href="https://guigheno.github.io" target="_blank" class="link-btn animar">Portfólio</a>
@@ -118,59 +20,70 @@
   </main>
 
   <footer>
-    <img id="mclaren" src="assets/img/mclaren.png" alt="Logo Mclaren" style="width: 200px; position: absolute;" />
+    <img id="mclaren" src="assets/img/mclaren.png" alt="Logo Mclaren" />
     <p>© 2025 Guilherme Gheno. Todos os direitos reservados.</p>
   </footer>
 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+  const tl = gsap.timeline();
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script>
-    gsap.to("#mclaren", {
-      x: window.innerWidth + 220, // distância até fora da tela direita
-      duration: 5,
-      ease: "power1.inOut",
-      repeat: -1, // infinito
-      repeatDelay: 2,
-      yoyo: false // volta pro início
+  // 1. Foto
+  tl.to("#foto", {
+    opacity: 1,
+    scale: 1,
+    duration: 1,
+    ease: "back.out(1.7)"
+  })
+
+  // 2. Nome
+  .to("#nome", {
+    opacity: 1,
+    scale: 1,
+    duration: 1.2,
+    ease: "elastic.out(1, 0.5)"
+  }, "-=0.3")
+
+  // 3. Botões
+  .to(".link-btn", {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "power2.out"
+  }, "-=0.6")
+
+  // 4. McLaren
+  .to("#mclaren", {
+    opacity: 1,
+    x: window.innerWidth + 220,
+    duration: 5,
+    ease: "power1.inOut",
+    repeat: -1,
+    repeatDelay: 2,
+    yoyo: false
+  }, "-=1");
+
+  // Hover animado na foto
+  const foto = document.getElementById("foto");
+  foto.addEventListener("mouseenter", () => {
+    gsap.to(foto, {
+      scale: 1.07,
+      rotation: 0,
+      boxShadow: "0px 0px 30px #000",
+      duration: 0.3
     });
+  });
 
-    gsap.to("#nome", {
-      opacity: 1,
+  foto.addEventListener("mouseleave", () => {
+    gsap.to(foto, {
       scale: 1,
-      duration: 1.2,
-      ease: "elastic.out(1, 0.5)"
+      rotation: 0,
+      boxShadow: "0px 0px 0px transparent",
+      duration: 0.3
     });
-
-    gsap.to(".animar", {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      ease: "power2.out",
-      stagger: 0.2, // anima um por um com atraso
-      delay: 0.5    // espera a animação do nome terminar
-    });
-
-    const foto = document.getElementById("foto");
-
-    foto.addEventListener("mouseenter", () => {
-      gsap.to(foto, {
-        scale: 1.07,
-        rotation: 0,
-        boxShadow: "0px 0px 30px #000",
-        duration: 0.3
-      });
-    });
-
-    foto.addEventListener("mouseleave", () => {
-      gsap.to(foto, {
-        scale: 1,
-        rotation: 0,
-        boxShadow: "0px 0px 0px transparent",
-        duration: 0.3
-      });
-    });
-    
-  </script>
+  });
+</script>
 
 </body>
 </html>

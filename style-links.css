@@ -1,0 +1,95 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #1a1a1a;
+  color: #fff;
+  font-family: sans-serif;
+  height: 100%;
+  background-image: url('assets/img/black-paper.png');
+  background-repeat: repeat;
+  background-size: auto;
+  background-attachment: fixed;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+main {
+  flex: 1;
+  padding: 3rem 1rem;
+}
+
+#foto {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.3s ease;
+  width: 12rem;
+  border-radius: 50%;
+  border: 3px solid #ac2424;
+}
+
+#nome {
+  opacity: 0;
+  transform: scale(0.5);
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.link-btn {
+  display: block;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  background-color: #5c5c5c;
+  color: #ffffff;
+  border: 2px solid #ac2424;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  max-width: 300px;
+  transition: background 0.3s, transform 0.2s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.link-btn:hover {
+  background-color: #0f0f0f;
+  color: #fff;
+  transform: scale(1.03);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  color: #aaa;
+  gap: 0.5rem;
+  background-color: #1a1a1a;
+  position: relative;
+}
+
+footer img#mclaren {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 200px;
+  opacity: 1;
+  position: absolute;
+  bottom: 50px;
+  left: -220px;
+}
+
+footer p {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  footer img#mclaren {
+    bottom: 10px;
+  }
+}
