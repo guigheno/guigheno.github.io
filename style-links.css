@@ -63,6 +63,7 @@ main {
 }
 
 footer {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,15 +71,14 @@ footer {
   color: #aaa;
   gap: 0.5rem;
   background-color: #1a1a1a;
-  position: relative;
 }
 
 footer img#mclaren {
+  position: absolute;
   display: block;
   margin: 0 auto 1rem;
   width: 200px;
   opacity: 1;
-  position: absolute;
   bottom: 50px;
   left: -220px;
 }
@@ -90,6 +90,6 @@ footer p {
 
 @media (max-width: 768px) {
   footer img#mclaren {
-    bottom: 60px;
+    bottom: 100px;
   }
 }
