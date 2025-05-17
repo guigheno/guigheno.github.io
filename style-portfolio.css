@@ -207,8 +207,8 @@
   height: 100vh; /* Altura total da tela */
   padding: 0;
   margin: 0;
-  margin-top: -300px;
-  margin-bottom: -300px;
+  margin-top: -330px;
+  margin-bottom: -330px;
 }
 
 #scene {
