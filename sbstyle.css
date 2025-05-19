@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    overflow: hidden;
   }
   
   .container {
@@ -49,3 +50,8 @@ body {
     border-radius: 16px;
   }
   
+
+  canvas {
+    width: 100%;
+    height: 100%;
+  }
