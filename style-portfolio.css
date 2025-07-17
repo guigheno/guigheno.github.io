@@ -154,17 +154,24 @@
 
   /* Responsividade extra */
   @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .menu {
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
   }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .menu li a {
+    display: block;
+    padding: 8px 0;
+  }
+}
 
   .experiencia-container {
     display: flex;
