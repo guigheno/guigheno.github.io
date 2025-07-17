@@ -75,6 +75,15 @@
     gap: 2rem;
     margin-top: 2rem;
   }
+
+  /* --- Conteúdo (sobreposto) --- */
+  .conteudo {
+    position: relative; /* garante que fique acima da animação */
+    z-index: 1; /* valor maior que o da animação */
+    color: white; /* cor de exemplo (ajuste conforme necessário) */
+    max-width: 800px;
+    margin: 0 auto;
+  }
   
   .projeto {
     background: #1c1f26;
@@ -197,19 +206,42 @@
 }
 
 #intro .intro-text {
-  color: #fff;
-  text-align: left; /* Alinha à esquerda */
+  position: relative; /* garante que fique acima da animação */
+  z-index: 1; /* valor maior que o da animação */
+  color: white; /* cor de exemplo (ajuste conforme necessário) */
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-#animacao {
+/* #animacao {
   position: relative;
   width: 100vw;
-  height: 100vh; /* Altura total da tela */
+  height: 100vh;   
   padding: 0;
   margin: 0;
   margin-top: -330px;
   margin-bottom: -330px;
+} */
+
+/* --- Animação de Fundo --- */
+#animacao {
+  position: fixed; /* fixo para cobrir toda a tela */
+  top: 0;
+  left: 0;
+  z-index: -1; /* Coloca ATRÁS de todo o conteúdo */
+  width: 100%;
+  height: 100vh;
+  pointer-events: none; /* permite interação com elementos acima */
 }
+
+#animacao canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+
 
 #scene {
   position: absolute;
