@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guilherme Gheno | Portfólio</title>
+  <link rel="stylesheet" href="style-portfolio.css" />
+  <link rel="icon" href="assets/icon/Senna.png" type="image/png">
+  
+</head>
+
+
+<script>
+  function toggleDetalhes(e, link) {
+    e.preventDefault();
+    const detalhes = link.previousElementSibling;
+    if (detalhes.style.display === "none") {
+      detalhes.style.display = "block";
+      link.textContent = "Ver menos";
+    } else {
+      detalhes.style.display = "none";
+      link.textContent = "Ver mais";
+    }
+  }
+</script>
+
+
+<body>
+
+  <header>
+  <h1 class="logo">Guilherme Gheno</h1>
+  <nav>
+    <ul class="menu">
+      <li><a href="#home">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="intro">
+  <div class="intro-text">
+    <h2>Bem-vindo ao meu portfólio</h2>
+    <p>Desenvolvedor com sede de inovação. Bora criar algo incrível?</p>
+  </div>
+</section>
+
+<section class="habilidades-destaque">
+  <div class="tags-container">
+    <span class="tech-tag">DevOps</span>
+    <span class="tech-tag">FullStack</span>
+    <span class="tech-tag">C#</span>
+    <span class="tech-tag">MVC</span>
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">Java</span>
+    <span class="tech-tag">Azure</span>
+    <span class="tech-tag">SQL</span>
+    <span class="tech-tag">API REST</span>
+    <span class="tech-tag">.NET Core</span>
+  </div>
+</section>
+
+<section id="animacao">
+  <canvas id="scene"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script>
+  var scene = new THREE.Scene();
+  document.addEventListener('mousemove', onMouseMove, false);
+  var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  var mouseX;
+  var mouseY;
+
+  var renderer = new THREE.WebGLRenderer({
+    alpha: true,
+    antialias: true
+  });
+  renderer.setClearColor(0x000000, 0);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.getElementById('animacao').appendChild(renderer.domElement);
+
+  window.addEventListener("resize", function() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  // Ajuste do tamanho e distribuição das partículas
+  var distance = Math.min(300, window.innerWidth / 3); // Aumentei o tamanho da esfera
+  var geometry = new THREE.Geometry();
+
+  for (var i = 0; i < 1600; i++) {
+    var vertex = new THREE.Vector3();
+    var theta = Math.acos(THREE.Math.randFloatSpread(2.5)); // Ajuste para distribuição
+    var phi = THREE.Math.randFloatSpread(360); 
+
+    vertex.x = distance * Math.sin(theta) * Math.cos(phi);
+    vertex.y = distance * Math.sin(theta) * Math.sin(phi);
+    vertex.z = distance * Math.cos(theta);
+
+    geometry.vertices.push(vertex);
+  }
+  
+  var particles = new THREE.Points(geometry, new THREE.PointsMaterial({
+    color: 0x7f5af0, 
+    size: 2.5, // Aumentei ligeiramente o tamanho das partículas
+    transparent: true,
+    opacity: 0.9 // Reduzi ligeiramente a opacidade
+  }));
+
+  var renderingParent = new THREE.Group();
+  renderingParent.add(particles);
+
+  var resizeContainer = new THREE.Group();
+  resizeContainer.add(renderingParent);
+  scene.add(resizeContainer);
+
+  // Posicionamento da câmera mais próximo
+  camera.position.z = 300;
+
+  var animate = function() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  };
+  
+  var myTween;
+  function onMouseMove(event) {
+    if(myTween)
+      myTween.kill();
+    
+    mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+    mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    // Movimento mais suave
+    myTween = gsap.to(particles.rotation, {
+      duration: 0.2,
+      x: mouseY*-0.5, // Reduzi a intensidade do movimento
+      y: mouseX*0.5
+    });
+  }
+  animate();
+
+  // Animação de escala mais suave
+  gsap.to(renderingParent.scale, {
+    duration: 15,
+    x: 1.5,
+    y: 1.5,
+    z: 1.5,
+    repeat: -1,
+    yoyo: true,
+    ease: "sine.inOut"
+  });
+
+  // Rotação automática mais lenta e em eixo diferente
+  gsap.to(renderingParent.rotation, {
+    duration: 180,
+    x: Math.PI * 1.5,
+    y: Math.PI * 3,
+    repeat: -1,
+    yoyo: true,
+    ease: "none"
+  });
+</script>
+</section>
+
+
+  <section id="sobre">
+    <div class="conteudo">
+    <h2>Sobre mim</h2>
+    <div style="display: flex; align-items: flex-start; gap: 20px; margin-top: 2rem;">
+      <img src="assets/img/guigheno.JPEG" alt="Guilherme Gheno"
+           style="width: 20%; border-radius: 50%; border: 3px solid #555;">
+  
+      <p style="text-align: left;">
+        Sou desenvolvedor de software com foco em soluções práticas, eficientes e escaláveis. Tenho experiência sólida com C#, MVC, Java e Python.
+        Comecei minha jornada técnica na linha de frente — lidando com hardware, redes e suporte — o que me deu uma visão completa da tecnologia, 
+        da infraestrutura até o código. Hoje, atuo com desenvolvimento, análise de requisitos e boas práticas DevOps, sempre buscando evoluir e entregar mais valor.
+        Gosto de desafios que fazem sentido. E como eterno autodidata, estou sempre estudando o próximo passo, buscando expandir fronteiras pessoais e profissionais.
+      </p>
+    </div>
+    <hr style="border: none; border-top: 1px solid #7f5af0; margin: 2rem 0;">
+    <div class="experiencia-container">
+      <div class="experiencia-item">
+        <a href="https://www.sigapark.com" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/Sigapark.png" alt="Sigapark" />
+        </a>
+        <h3>Desenvolvedor Full Stack em tempo integral</h3>
+      </div>
+      <div class="experiencia-item">
+        <a href="https://www2.faccat.br/portal/" target="_blank" rel="noopener noreferrer">
+          <img src="assets/img/Faccat.png" alt="Faccat" />
+        </a>
+        <h3>Cursando o 6° semestre em Sistemas de Informação</h3>
+      </div>
+    </div>
+    
+  </section>
+  
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projetos-container" style="display: flex; flex-direction: column; gap: 2rem;">
+      
+      <div class="projeto">
+        <h3><a href="https://sigacloudplus.com" target="_blank" style="color: #fffffe; text-decoration: none;">SigaCloud</a></h3>
+        <p>
+          Atualmente trabalhando no desenvolvimento do 
+          <a href="https://sigacloudplus.com" target="_blank" style="color: #fffffe; text-decoration: none;"><strong>SigaCloud</strong></a>,
+          sistema de gerenciamento de estacionamentos em nuvem da Sigapark Automação.
+        </p>
+        <div class="detalhes" style="display: none;">
+          <p>
+            O projeto busca escalabilidade, integração com dispositivos IoT e acesso remoto seguro via browser, 
+            modernizando a gestão de estacionamentos.
+          </p>
+        </div>
+        <a href="#" class="ver-mais" onclick="toggleDetalhes(event, this)">Ver mais</a>
+      </div>
+  
+      <div class="projeto">
+        <h3 style="color: #fffffe">SigaCaixa</h3>
+        <p>
+          Participo ativamente na evolução do <strong style="color: #fffffe">SigaCaixa</strong>, sistema local de automação de estacionamentos da Sigapark.
+        </p>
+        <div class="detalhes" style="display: none;">
+          <p>
+            Focado em performance e robustez, o projeto gerencia entradas, saídas e pagamentos com alta confiabilidade, 
+            integrando dispositivos físicos e garantindo fluidez na operação.
+          </p>
+        </div>
+        <a href="#" class="ver-mais" onclick="toggleDetalhes(event, this)">Ver mais</a>
+      </div>
+  
+      <div class="projeto">
+        <h3><a href="https://sigapark.com" target="_blank" style="color: #fffffe; text-decoration: none;">Sigapark.com</a></h3>
+        <p>
+          Responsável pela implementação e manutenção do 
+          <a href="https://sigapark.com" target="_blank" style="color: #fffffe; text-decoration: none;"><strong>site institucional da Sigapark</strong></a>, 
+          vitrine online da empresa, bem como sua landing page e plataformas para contato.
+        </p>
+        <div class="detalhes" style="display: none;">
+          <p>
+            Gerencio atualizações regulares de conteúdo, otimizações de desempenho e SEO, além de garantir responsividade e experiência de navegação fluida.
+          </p>
+        </div>
+        <a href="#" class="ver-mais" onclick="toggleDetalhes(event, this)">Ver mais</a>
+      </div>
+  
+    </div>
+  </section>
+  
+
+<section id="materials" class="materials-section">
+  <h2>Materiais</h2>
+  
+  <div class="materials-container">
+    <div class="material-item">
+      <h3>Currículo</h3>
+      <div class="material-links">
+        <a href="assets/Currículo - Guilherme Gheno.pdf" download class="material-link portugues" rel="noopener noreferrer">
+          <span>Português (PT-BR)</span>
+        </a>
+        <a href="assets/Resume - Guilherme Gheno.pdf" download class="material-link ingles" rel="noopener noreferrer">
+          <span>English (EN)</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="material-item">
+      <h3>Links</h3>
+      <a href="https://guigheno.github.io/links" target="_blank" class="material-link linktree">
+        <span>Minhas Redes</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form>
+      <input type="text" placeholder="Seu nome" required />
+      <input type="email" placeholder="Seu email" required />
+      <textarea placeholder="Sua mensagem"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Guilherme Gheno. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
