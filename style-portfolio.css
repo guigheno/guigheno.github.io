@@ -158,7 +158,7 @@
   /* Responsividade extra */
   @media (max-width: 768px) {
   header {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
