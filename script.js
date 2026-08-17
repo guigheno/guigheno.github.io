@@ -767,3 +767,50 @@ window.Animations = {
     initSmoothScroll
 };
 
+function initCodeTabs() {
+    const tabs = document.querySelectorAll('.code-tab');
+    const contents = document.querySelectorAll('.code-content');
+    const track = document.querySelector('.code-slider-track');
+    const slider = document.querySelector('.code-slider');
+
+    function moveTrack(tab) {
+        if (!track || !slider) return;
+        const sliderRect = slider.getBoundingClientRect();
+        const tabRect = tab.getBoundingClientRect();
+        track.style.width = tabRect.width + 'px';
+        track.style.transform = 'translateX(' + (tabRect.left - sliderRect.left - 4) + 'px)';
+    }
+
+    const activeTab = document.querySelector('.code-tab.active');
+    if (activeTab) {
+        setTimeout(() => moveTrack(activeTab), 100);
+    }
+
+    window.addEventListener('resize', () => {
+        const current = document.querySelector('.code-tab.active');
+        if (current) moveTrack(current);
+    });
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const lang = tab.getAttribute('data-lang');
+
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+
+            contents.forEach(c => {
+                c.classList.remove('active');
+                if (c.getAttribute('data-lang') === lang) {
+                    c.classList.add('active');
+                }
+            });
+
+            moveTrack(tab);
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initCodeTabs();
+});
+

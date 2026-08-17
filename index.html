@@ -200,10 +200,10 @@
                             </div>
                         </div>
                         <div class="floating-badge badge-3">
-                            <i class="fab fa-python"></i>
+                            <i class="fas fa-code"></i>
                             <div class="badge-content">
-                                <span class="badge-title">Python</span>
-                                <span class="badge-libs">Django, Flask, Pandas</span>
+                                <span class="badge-title">Progress</span>
+                                <span class="badge-libs">OpenEdge,ABL</span>
                             </div>
                         </div>
                     </div>
@@ -241,7 +241,7 @@
                         
                         <div class="about-stats">
                             <div class="stat-item">
-                                <div class="stat-number" data-count="5">0</div>
+                                <div class="stat-number" data-count="7">0</div>
                                 <div class="stat-label"
                                     data-text-pt="Sistemas em Produção"
                                     data-text-en="Production Systems">
@@ -250,7 +250,7 @@
                             </div>
 
                             <div class="stat-item">
-                                <div class="stat-number" data-count="6">0</div>
+                                <div class="stat-number" data-count="8">0</div>
                                 <div class="stat-label"
                                     data-text-pt="Tecnologias Utilizadas"
                                     data-text-en="Technologies Used">
@@ -259,7 +259,7 @@
                             </div>
 
                             <div class="stat-item">
-                                <div class="stat-number" data-count="4">0</div>
+                                <div class="stat-number" data-count="5">0</div>
                                 <div class="stat-label"
                                     data-text-pt="Ambientes Reais"
                                     data-text-en="Real Environments">
@@ -272,40 +272,98 @@
                     <div class="about-image-wrapper">
                         <div class="about-image-container">
                             <div class="code-block">
-                                <div class="code-line">
-                                    <span class="code-keyword">const</span>
-                                    <span class="code-variable">developer</span>
-                                    <span class="code-operator">=</span>
-                                    <span class="code-brace">{</span>
+                                <div class="code-tabs">
+                                    <div class="code-slider">
+                                        <div class="code-slider-track">
+                                            <div class="code-slider-thumb"></div>
+                                        </div>
+                                        <button class="code-tab active" data-lang="progress">Progress</button>
+                                        <button class="code-tab" data-lang="csharp">C#</button>
+                                        <button class="code-tab" data-lang="python">Python</button>
+                                    </div>
                                 </div>
-                                <div class="code-line indent">
-                                    <span class="code-property">name</span>
-                                    <span class="code-operator">:</span>
-                                    <span class="code-string">'Developer'</span>
-                                    <span class="code-comma">,</span>
+                                <div class="code-content active" data-lang="progress">
+                                    <div class="code-line">
+                                        <span class="code-keyword">DEFINE VARIABLE</span>
+                                        <span class="code-variable">developer</span>
+                                        <span class="code-keyword">AS CHARACTER</span>
+                                        <span class="code-operator">INITIAL</span>
+                                        <span class="code-string">'Guilherme Gheno'</span>
+                                        <span class="code-semicolon">.</span>
+                                    </div>
+                                    <div class="code-line indent">
+                                        <span class="code-keyword">DEFINE VARIABLE</span>
+                                        <span class="code-property">skills</span>
+                                        <span class="code-keyword">AS CHARACTER</span>
+                                        <span class="code-operator">INITIAL</span>
+                                        <span class="code-string">'C# / .NET, Progress, Java, JavaScript'</span>
+                                        <span class="code-semicolon">.</span>
+                                    </div>
+                                    <div class="code-line indent">
+                                        <span class="code-keyword">DEFINE VARIABLE</span>
+                                        <span class="code-property">passion</span>
+                                        <span class="code-keyword">AS CHARACTER</span>
+                                        <span class="code-operator">INITIAL</span>
+                                        <span class="code-string">'Coding'</span>
+                                        <span class="code-semicolon">.</span>
+                                    </div>
                                 </div>
-                                <div class="code-line indent">
-                                    <span class="code-property">skills</span>
-                                    <span class="code-operator">:</span>
-                                    <span class="code-bracket">[</span>
-                                    <span class="code-string">'C# / .NET'</span>
-                                    <span class="code-comma">,</span>
-                                    <span class="code-string">'Python'</span>
-                                    <span class="code-comma">,</span>
-                                    <span class="code-string">'Java'</span>
-                                    <span class="code-comma">,</span>
-                                    <span class="code-string">'JavaScript'</span>
-                                    <span class="code-bracket">]</span>
-                                    <span class="code-comma">,</span>
+                                <div class="code-content" data-lang="csharp">
+                                    <div class="code-line">
+                                        <span class="code-keyword">var</span>
+                                        <span class="code-variable">developer</span>
+                                        <span class="code-operator">=</span>
+                                        <span class="code-keyword">new</span>
+                                        <span class="code-brace">{</span>
+                                    </div>
+                                    <div class="code-line indent">
+                                        <span class="code-property">Name</span>
+                                        <span class="code-operator">=</span>
+                                        <span class="code-string">"Guilherme Gheno"</span>
+                                        <span class="code-comma">,</span>
+                                    </div>
+                                    <div class="code-line indent">
+                                        <span class="code-property">Skills</span>
+                                        <span class="code-operator">=</span>
+                                        <span class="code-keyword">new</span> <span class="code-bracket">[]</span> <span class="code-brace">{</span>
+                                        <span class="code-string">"C# / .NET"</span><span class="code-comma">,</span>
+                                        <span class="code-string">"Progress"</span><span class="code-comma">,</span>
+                                        <span class="code-string">"Java"</span><span class="code-comma">,</span>
+                                        <span class="code-string">"JavaScript"</span>
+                                        <span class="code-brace">}</span><span class="code-comma">,</span>
+                                    </div>
+                                    <div class="code-line indent">
+                                        <span class="code-property">Passion</span>
+                                        <span class="code-operator">=</span>
+                                        <span class="code-string">"Coding"</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="code-brace">}</span><span class="code-semicolon">;</span>
+                                    </div>
                                 </div>
-                                <div class="code-line indent">
-                                    <span class="code-property">passion</span>
-                                    <span class="code-operator">:</span>
-                                    <span class="code-string">'Coding'</span>
-                                </div>
-                                <div class="code-line">
-                                    <span class="code-brace">}</span>
-                                    <span class="code-semicolon">;</span>
+                                <div class="code-content" data-lang="python">
+                                    <div class="code-line">
+                                        <span class="code-variable">developer</span>
+                                        <span class="code-operator">=</span>
+                                        <span class="code-brace">{</span>
+                                    </div>
+                                    <div class="code-line indent">
+                                        <span class="code-string">"name"</span><span class="code-operator">:</span> <span class="code-string">"Guilherme Gheno"</span><span class="code-comma">,</span>
+                                    </div>
+                                    <div class="code-line indent">
+                                        <span class="code-string">"skills"</span><span class="code-operator">:</span> <span class="code-bracket">[</span>
+                                        <span class="code-string">"C# / .NET"</span><span class="code-comma">,</span>
+                                        <span class="code-string">"Progress"</span><span class="code-comma">,</span>
+                                        <span class="code-string">"Java"</span><span class="code-comma">,</span>
+                                        <span class="code-string">"JavaScript"</span>
+                                        <span class="code-bracket">]</span><span class="code-comma">,</span>
+                                    </div>
+                                    <div class="code-line indent">
+                                        <span class="code-string">"passion"</span><span class="code-operator">:</span> <span class="code-string">"Coding"</span>
+                                    </div>
+                                    <div class="code-line">
+                                        <span class="code-brace">}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -367,6 +425,15 @@
                                     <div class="skill-progress"></div>
                                 </div>
                             </div>
+                            <div class="skill-item" data-skill="Next.js" data-percent="85">
+                                <div class="skill-header">
+                                    <span class="skill-name">Next.js</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
@@ -400,9 +467,18 @@
                                     <div class="skill-progress"></div>
                                 </div>
                             </div>
-                            <div class="skill-item" data-skill="Python" data-percent="75">
+                            <div class="skill-item" data-skill="Python" data-percent="55">
                                 <div class="skill-header">
                                     <span class="skill-name">Python</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="Progress" data-percent="55">
+                                <div class="skill-header">
+                                    <span class="skill-name">Progress / OpenEdge</span>
                                     <span class="skill-percent">0%</span>
                                 </div>
                                 <div class="skill-bar">
@@ -451,6 +527,15 @@
                                     <div class="skill-progress"></div>
                                 </div>
                             </div>
+                            <div class="skill-item" data-skill="SecOps" data-percent="75">
+                                <div class="skill-header">
+                                    <span class="skill-name">SecOps</span>
+                                    <span class="skill-percent">0%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -471,12 +556,53 @@
                 </div>
                 
                 <div class="timeline">
+
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <div class="timeline-year">2020 - Present</div>
+                                <div class="timeline-year">2026 - Atual</div>
                                 <div class="timeline-badge" data-text-en="Current" data-text-pt="Atual">Current</div>
+                            </div>
+                            <h3 class="timeline-title" data-text-en="Systems Assistant" data-text-pt="Assistente de Sistemas">Assistente de Sistemas</h3>
+                            <div class="timeline-company">
+                                <i class="fas fa-building"></i>
+                                Unimed Encosta da Serra
+                            </div>
+                            <p class="timeline-description" data-text-en="Working with Progress (OpenEdge) developing internal programs and providing internal client support at a healthcare cooperative. The cooperative environment demands strong interpersonal skills, empathy, and a collaborative mindset aligned with the principles of cooperativism and the 'jeito de cuidar' (way of caring) — a philosophy that values humanized relationships, active listening, and collective well-being. Contributing to system maintenance and improvement while fostering a culture of respect, teamwork, and shared purpose." data-text-pt="Atuando com Progress (OpenEdge) no desenvolvimento de programas internos e no atendimento ao cliente interno da cooperativa de saúde. O ambiente cooperativo exige fortes habilidades interpessoais, empatia e uma postura colaborativa alinhada aos princípios do cooperativismo e do 'jeito de cuidar' — filosofia que valoriza relações humanizadas, escuta ativa e o bem-estar coletivo. Contribuindo para a manutenção e evolução dos sistemas, ao mesmo tempo em que se fortalece uma cultura de respeito, trabalho em equipe e propósito compartilhado.">
+                                Atuando com Progress (OpenEdge) no desenvolvimento de programas internos e no atendimento ao cliente interno da cooperativa de saúde. O ambiente cooperativo exige fortes habilidades interpessoais, empatia e uma postura colaborativa alinhada aos princípios do cooperativismo e do 'jeito de cuidar' — filosofia que valoriza relações humanizadas, escuta ativa e o bem-estar coletivo. Contribuindo para a manutenção e evolução dos sistemas, ao mesmo tempo em que se fortalece uma cultura de respeito, trabalho em equipe e propósito compartilhado.
+                            </p>
+                            <div class="timeline-achievements">
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span data-text-en="Developing and maintaining internal systems using Progress (OpenEdge)." data-text-pt="Desenvolver e manter sistemas internos utilizando Progress (OpenEdge).">Desenvolver e manter sistemas internos utilizando Progress (OpenEdge).</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span data-text-en="Providing internal client support and resolving system-related issues." data-text-pt="Atender clientes internos e resolver demandas relacionadas aos sistemas.">Atender clientes internos e resolver demandas relacionadas aos sistemas.</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span data-text-en="Analyzing requirements and translating operational needs into technical solutions." data-text-pt="Analisar requisitos e traduzir necessidades operacionais em soluções técnicas.">Analisar requisitos e traduzir necessidades operacionais em soluções técnicas.</span>
+                                </div>
+                                <div class="achievement-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span data-text-en="Contributing to system improvement and process automation within the healthcare cooperative." data-text-pt="Contribuir para a melhoria de sistemas e automação de processos na cooperativa de saúde.">Contribuir para a melhoria de sistemas e automação de processos na cooperativa de saúde.</span>
+                                </div>
+                            </div>
+                            <div class="timeline-tags">
+                                <span class="tag">Progress</span>
+                                <span class="tag">OpenEdge</span>
+                                <span class="tag">Desenvolvimento Interno</span>
+                                <span class="tag">Suporte</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <div class="timeline-year">2020 - 2026</div>
                             </div>
                             <h3 class="timeline-title" data-text-en="Full Stack Developer" data-text-pt="Desenvolvedor Full Stack">Senior Full Stack Developer</h3>
                             <div class="timeline-company">
@@ -513,7 +639,7 @@
                             </div>
                         </div>
                     </div>
-                    
+<!--                     
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
@@ -535,7 +661,7 @@
                             </div>
                         </div>
                     </div>
-                    
+                     -->
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
@@ -590,7 +716,7 @@
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <div class="timeline-year" data-text-en="2020 - Present (Currently in 7th semester)" data-text-pt="2020 - Cursando (Atualmente no 7° Semestre)">2020 - Present</div>
+                                <div class="timeline-year" data-text-en="2020 - Present (Currently in the last semester)" data-text-pt="2020 - Cursando (Atualmente no último semestre)">2020 - Present</div>
                                 <div class="timeline-badge" data-text-en="Current" data-text-pt="Em Andamento">Current</div>
                             </div>
                             <h3 class="timeline-title" data-text-en="Bachelor’s Degree in Information Systems" data-text-pt="Bacharelado em Sistemas de Informação">Bachelor’s Degree in Information Systems</h3>
@@ -636,7 +762,7 @@
                         <div class="project-image">
                             <div class="project-overlay">
                                 <div class="project-links">
-                                    <a href="#" class="project-link" title="View Project">
+                                    <a href="http://verificar.site/registro/72ZWFD8S" class="project-link" title="View Project" target="_blank">
                                         <i class="fas fa-external-link-alt"></i>
                                     </a>
                                     <a href="https://github.com/guigheno" class="project-link" title="View Code">
@@ -859,7 +985,7 @@
             <div class="footer-content">
                 <div class="footer-text-wrapper">
                     <p class="footer-text">
-                        <span class="footer-copyright">© 2026 Developer Portfolio</span>
+                        <span class="footer-copyright">© 2026 Guilherme Gheno Portfolio</span>
                         <span class="footer-divider">•</span>
                         <span class="footer-built">Built with passion and code</span>
                     </p>
