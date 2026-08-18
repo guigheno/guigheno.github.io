@@ -1,0 +1,165 @@
+---
+const slides = [
+  { src: '/images/Athos1.jpg', alt: 'Athos by Construarte — Vista externa' },
+  { src: '/images/Athos2.jpg', alt: 'Athos by Construarte — Detalhe' },
+  { src: '/images/Vêneto1.jpg', alt: 'Vêneto by Hasam — Vista geral' },
+  { src: '/images/Vêneto2.jpg', alt: 'Vêneto by Hasam — Área de lazer' },
+  { src: '/images/Vêneto3.jpg', alt: 'Vêneto by Hasam — Detalhe' },
+];
+---
+
+<section class="relative w-full h-[60vh] md:h-[75vh] overflow-hidden" id="hero-slideshow">
+  {slides.map((slide, i) => (
+    <div
+      class:list={[
+        'slide-item absolute inset-0 transition-opacity duration-1000 ease-in-out',
+        i === 0 ? 'opacity-100' : 'opacity-0',
+      ]}
+      data-index={i}
+    >
+      <img
+        src={slide.src}
+        alt={slide.alt}
+        class="w-full h-full object-cover"
+        loading={i === 0 ? 'eager' : 'lazy'}
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-sand-50 via-sand-50/20 to-sand-50/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-sand-50/50 to-transparent"></div>
+    </div>
+  ))}
+
+  <!-- Overlay content -->
+  <div class="absolute inset-0 z-20 flex flex-col justify-end section-padding !pb-16 md:!pb-20">
+    <div class="max-w-6xl mx-auto w-full">
+      <span class="text-sm font-semibold tracking-widest uppercase text-accent-500 mb-4 block">
+        Portfólio de Obras
+      </span>
+      <h2 class="font-display text-3xl md:text-5xl lg:text-6xl font-bold text-sand-900 leading-tight">
+        Projetos que <span class="gradient-text">transformam</span>
+      </h2>
+      <p class="text-sand-600 text-lg md:text-xl mt-4 max-w-2xl">
+        Uma seleção dos empreendimentos que marcaram minha trajetória na engenharia civil.
+      </p>
+    </div>
+  </div>
+
+  <!-- Navigation dots -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex gap-3" id="slideshow-dots">
+    {slides.map((_, i) => (
+      <button
+        class:list={[
+          'dot-btn w-2.5 h-2.5 rounded-full transition-all duration-500 cursor-pointer',
+          i === 0
+            ? 'bg-accent-500 w-8 shadow-lg shadow-accent-400/40'
+            : 'bg-sand-400/40 hover:bg-sand-400/60',
+        ]}
+        data-dot={i}
+        aria-label={`Slide ${i + 1}`}
+      />
+    ))}
+  </div>
+
+  <!-- Progress bar -->
+  <div class="absolute bottom-0 left-0 right-0 h-0.5 bg-sand-300/30 z-30">
+    <div
+      class="h-full bg-gradient-to-r from-accent-400 to-primary-400"
+      id="slideshow-progress"
+    ></div>
+  </div>
+
+  <!-- Counter -->
+  <div class="absolute top-6 right-6 z-30 glass rounded-full px-4 py-2">
+    <span class="text-sm font-mono text-sand-600">
+      <span id="slideshow-current">1</span>
+      <span class="text-sand-400 mx-1">/</span>
+      <span id="slideshow-total">5</span>
+    </span>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const INTERVAL = 5000;
+    const slides = document.querySelectorAll('.slide-item') as NodeListOf<HTMLElement>;
+    const dots = document.querySelectorAll('.dot-btn') as NodeListOf<HTMLElement>;
+    const progress = document.getElementById('slideshow-progress')!;
+    const counter = document.getElementById('slideshow-current')!;
+    const total = slides.length;
+    let current = 0;
+    let timer: ReturnType<typeof setInterval> | null = null;
+    let progressTimer: ReturnType<typeof setInterval> | null = null;
+
+    function goTo(index: number) {
+      slides[current].classList.remove('opacity-100');
+      slides[current].classList.add('opacity-0');
+
+      dots[current].classList.remove('bg-accent-500', 'w-8', 'shadow-lg', 'shadow-accent-400/40');
+      dots[current].classList.add('bg-sand-400/40');
+
+      current = index;
+
+      slides[current].classList.remove('opacity-0');
+      slides[current].classList.add('opacity-100');
+
+      dots[current].classList.remove('bg-sand-400/40');
+      dots[current].classList.add('bg-accent-500', 'w-8', 'shadow-lg', 'shadow-accent-400/40');
+
+      counter.textContent = String(current + 1);
+      resetProgress();
+    }
+
+    function next() {
+      goTo((current + 1) % total);
+    }
+
+    function resetProgress() {
+      if (progressTimer) clearInterval(progressTimer);
+      progress.style.transition = 'none';
+      progress.style.width = '0%';
+      void progress.offsetWidth;
+      progress.style.transition = `width ${INTERVAL}ms linear`;
+      progress.style.width = '100%';
+    }
+
+    function startAuto() {
+      if (timer) clearInterval(timer);
+      timer = setInterval(next, INTERVAL);
+      resetProgress();
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.getAttribute('data-dot') || '0');
+        goTo(idx);
+        startAuto();
+      });
+    });
+
+    const container = document.getElementById('hero-slideshow')!;
+    container.addEventListener('mouseenter', () => {
+      if (timer) clearInterval(timer);
+      if (progressTimer) clearInterval(progressTimer);
+      progress.style.transition = 'none';
+    });
+    container.addEventListener('mouseleave', () => {
+      startAuto();
+    });
+
+    let touchStartX = 0;
+    container.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+      if (timer) clearInterval(timer);
+      if (progressTimer) clearInterval(progressTimer);
+    }, { passive: true });
+    container.addEventListener('touchend', (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) goTo((current + 1) % total);
+        else goTo((current - 1 + total) % total);
+      }
+      startAuto();
+    }, { passive: true });
+
+    startAuto();
+  });
+</script>

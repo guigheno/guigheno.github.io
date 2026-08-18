@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0c1929"/>
+      <stop offset="100%" stop-color="#081220"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38abf8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0e8ee9" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bg1)"/>
+  <!-- Grid -->
+  <g opacity="0.06" stroke="#38abf8" stroke-width="0.5">
+    <line x1="0" y1="0" x2="0" y2="600"/><line x1="40" y1="0" x2="40" y2="600"/><line x1="80" y1="0" x2="80" y2="600"/>
+    <line x1="120" y1="0" x2="120" y2="600"/><line x1="160" y1="0" x2="160" y2="600"/><line x1="200" y1="0" x2="200" y2="600"/>
+    <line x1="240" y1="0" x2="240" y2="600"/><line x1="280" y1="0" x2="280" y2="600"/><line x1="320" y1="0" x2="320" y2="600"/>
+    <line x1="360" y1="0" x2="360" y2="600"/><line x1="400" y1="0" x2="400" y2="600"/><line x1="440" y1="0" x2="440" y2="600"/>
+    <line x1="480" y1="0" x2="480" y2="600"/><line x1="520" y1="0" x2="520" y2="600"/><line x1="560" y1="0" x2="560" y2="600"/>
+    <line x1="600" y1="0" x2="600" y2="600"/><line x1="640" y1="0" x2="640" y2="600"/><line x1="680" y1="0" x2="680" y2="600"/>
+    <line x1="720" y1="0" x2="720" y2="600"/><line x1="760" y1="0" x2="760" y2="600"/><line x1="800" y1="0" x2="800" y2="600"/>
+    <line x1="0" y1="0" x2="800" y2="0"/><line x1="0" y1="40" x2="800" y2="40"/><line x1="0" y1="80" x2="800" y2="80"/>
+    <line x1="0" y1="120" x2="800" y2="120"/><line x1="0" y1="160" x2="800" y2="160"/><line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="240" x2="800" y2="240"/><line x1="0" y1="280" x2="800" y2="280"/><line x1="0" y1="320" x2="800" y2="320"/>
+    <line x1="0" y1="360" x2="800" y2="360"/><line x1="0" y1="400" x2="800" y2="400"/><line x1="0" y1="440" x2="800" y2="440"/>
+    <line x1="0" y1="480" x2="800" y2="480"/><line x1="0" y1="520" x2="800" y2="520"/><line x1="0" y1="560" x2="800" y2="560"/>
+    <line x1="0" y1="600" x2="800" y2="600"/>
+  </g>
+  <!-- Tower outlines - 10 residential towers in forest setting -->
+  <g stroke="url(#accent1)" stroke-width="1" fill="none" opacity="0.5">
+    <!-- Tower 1 -->
+    <rect x="80" y="180" width="45" height="200" rx="2"/>
+    <line x1="80" y1="210" x2="125" y2="210"/><line x1="80" y1="240" x2="125" y2="240"/>
+    <line x1="80" y1="270" x2="125" y2="270"/><line x1="80" y1="300" x2="125" y2="300"/>
+    <line x1="80" y1="330" x2="125" y2="330"/><line x1="80" y1="360" x2="125" y2="360"/>
+    <!-- Tower 2 -->
+    <rect x="140" y="160" width="45" height="220" rx="2"/>
+    <line x1="140" y1="190" x2="185" y2="190"/><line x1="140" y1="220" x2="185" y2="220"/>
+    <line x1="140" y1="250" x2="185" y2="250"/><line x1="140" y1="280" x2="185" y2="280"/>
+    <line x1="140" y1="310" x2="185" y2="310"/><line x1="140" y1="340" x2="185" y2="340"/>
+    <line x1="140" y1="370" x2="185" y2="370"/>
+    <!-- Tower 3 -->
+    <rect x="200" y="140" width="45" height="240" rx="2"/>
+    <line x1="200" y1="170" x2="245" y2="170"/><line x1="200" y1="200" x2="245" y2="200"/>
+    <line x1="200" y1="230" x2="245" y2="230"/><line x1="200" y1="260" x2="245" y2="260"/>
+    <line x1="200" y1="290" x2="245" y2="290"/><line x1="200" y1="320" x2="245" y2="320"/>
+    <line x1="200" y1="350" x2="245" y2="350"/>
+    <!-- Tower 4 -->
+    <rect x="260" y="170" width="45" height="210" rx="2"/>
+    <line x1="260" y1="200" x2="305" y2="200"/><line x1="260" y1="230" x2="305" y2="230"/>
+    <line x1="260" y1="260" x2="305" y2="260"/><line x1="260" y1="290" x2="305" y2="290"/>
+    <line x1="260" y1="320" x2="305" y2="320"/><line x1="260" y1="350" x2="305" y2="350"/>
+    <!-- Tower 5 -->
+    <rect x="320" y="150" width="45" height="230" rx="2"/>
+    <line x1="320" y1="180" x2="365" y2="180"/><line x1="320" y1="210" x2="365" y2="210"/>
+    <line x1="320" y1="240" x2="365" y2="240"/><line x1="320" y1="270" x2="365" y2="270"/>
+    <line x1="320" y1="300" x2="365" y2="300"/><line x1="320" y1="330" x2="365" y2="330"/>
+    <line x1="320" y1="360" x2="365" y2="360"/>
+    <!-- Tower 6 -->
+    <rect x="380" y="155" width="45" height="225" rx="2"/>
+    <line x1="380" y1="185" x2="425" y2="185"/><line x1="380" y1="215" x2="425" y2="215"/>
+    <line x1="380" y1="245" x2="425" y2="245"/><line x1="380" y1="275" x2="425" y2="275"/>
+    <line x1="380" y1="305" x2="425" y2="305"/><line x1="380" y1="335" x2="425" y2="335"/>
+    <!-- Tower 7 -->
+    <rect x="440" y="145" width="45" height="235" rx="2"/>
+    <line x1="440" y1="175" x2="485" y2="175"/><line x1="440" y1="205" x2="485" y2="205"/>
+    <line x1="440" y1="235" x2="485" y2="235"/><line x1="440" y1="265" x2="485" y2="265"/>
+    <line x1="440" y1="295" x2="485" y2="295"/><line x1="440" y1="325" x2="485" y2="325"/>
+    <line x1="440" y1="355" x2="485" y2="355"/>
+    <!-- Tower 8 -->
+    <rect x="500" y="165" width="45" height="215" rx="2"/>
+    <line x1="500" y1="195" x2="545" y2="195"/><line x1="500" y1="225" x2="545" y2="225"/>
+    <line x1="500" y1="255" x2="545" y2="255"/><line x1="500" y1="285" x2="545" y2="285"/>
+    <line x1="500" y1="315" x2="545" y2="315"/><line x1="500" y1="345" x2="545" y2="345"/>
+    <!-- Tower 9 -->
+    <rect x="560" y="175" width="45" height="205" rx="2"/>
+    <line x1="560" y1="205" x2="605" y2="205"/><line x1="560" y1="235" x2="605" y2="235"/>
+    <line x1="560" y1="265" x2="605" y2="265"/><line x1="560" y1="295" x2="605" y2="295"/>
+    <line x1="560" y1="325" x2="605" y2="325"/><line x1="560" y1="355" x2="605" y2="355"/>
+    <!-- Tower 10 -->
+    <rect x="620" y="185" width="45" height="195" rx="2"/>
+    <line x1="620" y1="215" x2="665" y2="215"/><line x1="620" y1="245" x2="665" y2="245"/>
+    <line x1="620" y1="275" x2="665" y2="275"/><line x1="620" y1="305" x2="665" y2="305"/>
+    <line x1="620" y1="335" x2="665" y2="335"/>
+  </g>
+  <!-- Lake -->
+  <ellipse cx="400" cy="450" rx="280" ry="60" fill="none" stroke="#38abf8" stroke-width="0.8" opacity="0.25"/>
+  <ellipse cx="400" cy="450" rx="220" ry="45" fill="none" stroke="#38abf8" stroke-width="0.5" opacity="0.15"/>
+  <!-- Trees (circles) -->
+  <g stroke="#38abf8" stroke-width="0.6" fill="none" opacity="0.15">
+    <circle cx="60" cy="400" r="25"/><circle cx="90" cy="410" r="18"/>
+    <circle cx="710" cy="390" r="22"/><circle cx="740" cy="405" r="20"/>
+    <circle cx="350" cy="420" r="15"/><circle cx="450" cy="415" r="17"/>
+    <circle cx="130" cy="420" r="14"/><circle cx="670" cy="415" r="16"/>
+  </g>
+  <!-- Dimension lines -->
+  <g stroke="#38abf8" stroke-width="0.4" opacity="0.2" stroke-dasharray="4 3">
+    <line x1="80" y1="130" x2="665" y2="130"/>
+    <line x1="75" y1="135" x2="75" y2="125"/>
+    <line x1="670" y1="135" x2="670" y2="125"/>
+  </g>
+  <!-- Dimension text -->
+  <text x="370" y="125" fill="#38abf8" opacity="0.2" font-family="monospace" font-size="10" text-anchor="middle">10 TORRES</text>
+  <!-- Ground line -->
+  <line x1="40" y1="380" x2="760" y2="380" stroke="#38abf8" stroke-width="0.5" opacity="0.15"/>
+  <!-- Title block -->
+  <g opacity="0.3">
+    <rect x="580" y="520" width="200" height="60" rx="3" fill="none" stroke="#38abf8" stroke-width="0.8"/>
+    <text x="590" y="540" fill="#38abf8" font-family="monospace" font-size="9">VÊNETO BY HASAM</text>
+    <text x="590" y="555" fill="#38abf8" font-family="monospace" font-size="7" opacity="0.6">Gramado/RS — 2025</text>
+    <text x="590" y="570" fill="#38abf8" font-family="monospace" font-size="7" opacity="0.6">106 unidades · 65m²–133m²</text>
+  </g>
+  <!-- Corner marks -->
+  <g stroke="#38abf8" stroke-width="0.5" opacity="0.15">
+    <polyline points="20,40 20,20 40,20" fill="none"/>
+    <polyline points="760,20 780,20 780,40" fill="none"/>
+    <polyline points="780,560 780,580 760,580" fill="none"/>
+    <polyline points="40,580 20,580 20,560" fill="none"/>
+  </g>
+</svg>
