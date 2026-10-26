@@ -1212,6 +1212,18 @@ img {
     box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
+/* Card inteiro clicável (quando é <a>) */
+a.project-card {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Cards sem link não mostram a mãozinha */
+div.project-card {
+    cursor: default;
+}
+
 .project-image {
     position: relative;
     width: 100%;
@@ -1242,11 +1254,13 @@ img {
     align-items: center;
     justify-content: center;
     opacity: 0;
+    pointer-events: none;
     transition: opacity var(--transition);
 }
 
 .project-card:hover .project-overlay {
     opacity: 1;
+    pointer-events: auto;
 }
 
 .project-links {
